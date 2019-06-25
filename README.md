@@ -2,24 +2,30 @@
 
 Use vue-cli 3.0 created project
 
-> Contains the following
+## Contains the following references
 
-- vue
+- vue-cli 3.0
 - vuex
-- vue-router
-- eslint
-- sass
-- webpack
-
+- roter
+- axios
+- element-ui
 
 
 ## start use
 
 ```shell
-npm install
+cnpm install
+npm run dev
 ```
 
+## catalog
 
+* public 公共资源
+* src 源文件
+	* assets 静态资源文件
+	* config 全局资源
+	* store vuex状态管理
+	* views 页面组件资源
 
 ## author
 

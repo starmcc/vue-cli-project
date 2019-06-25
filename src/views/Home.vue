@@ -1,5 +1,9 @@
+<style scoped>
+
+</style>
+
 <template>
-	<div>123</div>
+	<div>home</div>
 </template>
 
 <script>
