@@ -6,7 +6,7 @@ import ElementUI from 'element-ui'
 import '@/http/axios'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css'
-import './common/css/public.css'
+import './commons/css/public.css'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)

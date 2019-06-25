@@ -22,10 +22,13 @@ npm run dev
 
 * public 公共资源
 * src 源文件
-	* assets 静态资源文件
-	* config 全局资源
+	* commons 全局资源
+	* components 全局组件
+	* http 请求包
 	* store vuex状态管理
-	* views 页面组件资源
+	* pages 页面组件资源
+	* router 路由包
+	* utils 工具包
 
 ## author
 
