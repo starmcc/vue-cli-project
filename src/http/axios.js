@@ -1,26 +1,34 @@
-import Axios from 'axios'
+import axios from 'axios'
+import loading from '@/utils/loading'
 
-/**
- * 请求方法(this,method,data,url)
- */
-export default async (vm, method = 'GET', data = {}, url = '') => {
-	let headers = {
-		'Accept': 'application/json;charset=utf-8',
-		'Content-Type': 'application/json;charset=utf-8',
-		'Cache-Control': 'no-cache'
+
+axios.defaults.baseURL = "http://localhost"
+axios.defaults.timeout = 6 * 1000
+//设置cross跨域 并设置访问权限 允许跨域携带cookie信息
+axios.defaults.withCredentials = true
+
+// request拦截器
+axios.interceptors.request.use(config => {
+	config.headers['Accept'] = "application/json"
+	config.headers['Content-Type'] = "application/json"
+	config.headers['Cache-Control'] = "no-cache"
+	loading.start()
+	return config
+}, error => {
+	loading.close()
+	Promise.reject(error)
+})
+
+// respone拦截器
+axios.interceptors.response.use(
+	response => {
+		const value = response.data.value
+		loading.close()
+		return value
+	},
+	error => {
+		loading.close()
+		return Promise.reject(error)
 	}
-	let params = method.toLowerCase() === 'get' ? 'params' : 'data'
-	data = method.toLowerCase() === 'get' ? data : { 'value': data }
-	data = JSON.stringify(data)
-	let res = await Axios({
-		url, method, headers,
-		[params]: data,
-		timeout: 10 * 1000
-	}).catch(err => {
-		vm.$message.error(err.toString())
-	})
-	return new Promise((resolve) => {
-		let data = res.data.value
-		resolve(data)
-	})
-}
+)
+export default axios
