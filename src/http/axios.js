@@ -1,5 +1,4 @@
 import Axios from 'axios'
-import { baseURL, requestTimeOut } from '@/config/config.js'
 
 /**
  * 请求方法(this,method,data,url)
@@ -14,9 +13,9 @@ export default async (vm, method = 'GET', data = {}, url = '') => {
 	data = method.toLowerCase() === 'get' ? data : { 'value': data }
 	data = JSON.stringify(data)
 	let res = await Axios({
-		baseURL, url, method, headers,
+		url, method, headers,
 		[params]: data,
-		timeout: requestTimeOut
+		timeout: 10 * 1000
 	}).catch(err => {
 		vm.$message.error(err.toString())
 	})

@@ -1,4 +1,4 @@
-import axios from '@/axios.js'
+import axios from '@/http/axios.js'
 // 接口管理
 
 

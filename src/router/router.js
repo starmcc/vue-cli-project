@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home'
-import App from '@/App'
+import Home from '@/pages/home/Home'
+import Index from '@/Index'
 
 Vue.use(Router)
 
 const routes = [
-	{ path: '/', name: 'index', component: App, meta: { title: 'index' } },
+	{ path: '/', name: 'index', component: Index, meta: { title: 'index' } },
 	{ path: '/home', name: 'home', component: Home, meta: { title: 'home' } },
 ]
 

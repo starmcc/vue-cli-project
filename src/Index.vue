@@ -2,7 +2,7 @@
 </style>
 
 <template>
-	<div>app.vue</div>
+	<div>index.vue</div>
 </template>
 
 
