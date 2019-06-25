@@ -3,7 +3,7 @@ import Axios from '@/http/axios.js'
 
 
 // 基础配置接口
-// export const testRequest = (vm, data) => request(vm, 'GET', data, '/test/request')
+// export const testRequest = (data) => request('GET', data, '/test/request')
 
 
 /**
