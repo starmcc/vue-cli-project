@@ -2,7 +2,7 @@
 </style>
 
 <template>
-	<div>index.vue</div>
+	<router-view></router-view>
 </template>
 
 

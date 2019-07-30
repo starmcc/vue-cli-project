@@ -4,11 +4,15 @@ Use vue-cli 3.0 created project
 
 ## Contains the following references
 
-- vue-cli 3.0
-- vuex
-- roter
-- axios
-- element-ui
+- vue-cli-3 // vue scaffold
+- vue // vue.js
+- vuex // status Manager
+- roter // router
+- axios // request tools
+- element-ui // UI framework
+- NProgress // show address loading
+- compression-webpack-plugin // GZIP compress package
+- CDN // speed up configuration
 
 
 ## start use
@@ -26,7 +30,7 @@ npm run dev
 	* components 全局组件
 	* http 请求包
 	* store vuex状态管理
-	* pages 页面组件资源
+	* views 页面资源
 	* router 路由包
 	* utils 工具包
 

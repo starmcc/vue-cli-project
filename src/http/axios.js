@@ -1,34 +1,32 @@
-import axios from 'axios'
-import loading from '@/utils/loading'
+import Axios from 'axios'
+import NProgress from '@/utils/NProgress'
 
-
-axios.defaults.baseURL = "http://localhost"
-axios.defaults.timeout = 6 * 1000
+Axios.defaults.timeout = 6 * 1000
 //设置cross跨域 并设置访问权限 允许跨域携带cookie信息
-axios.defaults.withCredentials = true
+Axios.defaults.withCredentials = true
 
 // request拦截器
-axios.interceptors.request.use(config => {
+Axios.interceptors.request.use(config => {
+	NProgress.start()
 	config.headers['Accept'] = "application/json"
 	config.headers['Content-Type'] = "application/json"
 	config.headers['Cache-Control'] = "no-cache"
-	loading.start()
 	return config
 }, error => {
-	loading.close()
+	NProgress.done()
 	Promise.reject(error)
 })
 
 // respone拦截器
-axios.interceptors.response.use(
+Axios.interceptors.response.use(
 	response => {
+		NProgress.done()
 		const value = response.data.value
-		loading.close()
 		return value
 	},
 	error => {
-		loading.close()
+		NProgress.done()
 		return Promise.reject(error)
 	}
 )
-export default axios
+export default Axios
