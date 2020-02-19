@@ -1,4 +1,4 @@
-import { Loading } from 'element-ui'
+// import { Loading } from 'element-ui'
 
 const config = {
 	lock: true,

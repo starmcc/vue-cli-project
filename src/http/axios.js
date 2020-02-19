@@ -1,5 +1,8 @@
-import Axios from 'axios'
-import NProgress from '@/utils/NProgress'
+// import Axios from 'axios'
+
+NProgress.inc(0.2)
+NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
+
 
 Axios.defaults.timeout = 6 * 1000
 //设置cross跨域 并设置访问权限 允许跨域携带cookie信息

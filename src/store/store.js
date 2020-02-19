@@ -1,4 +1,4 @@
-import Vuex from 'vuex'
+// import Vuex from 'vuex'
 import * as mutations from '@/store/mutations'
 import * as actions from '@/store/actions'
 

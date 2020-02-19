@@ -1,5 +1,5 @@
-import VueRouter from 'vue-router'
-import NProgress from '@/utils/NProgress'
+// import VueRouter from 'vue-router'
+// import NProgress from '@/utils/NProgress'
 
 const routes = [
 	{
