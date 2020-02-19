@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Index from '@/views/Index'
 import store from '@/store/store'
 import router from '@/router/router'
-import ELEMENT from 'element-ui'
+import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/display.css'
 import '@/commons/css/public.css'
 import { dateFormat } from '@/utils/DateUtils'
 
 Vue.config.productionTip = false
-Vue.use(ELEMENT)
+Vue.use(ElementUI)
 
 console.warn("framework：Vue and Element-UI Project")
 

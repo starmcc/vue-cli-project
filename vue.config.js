@@ -25,8 +25,9 @@ module.exports = {
 			'vue': 'Vue',
 			'vuex': 'Vuex',
 			'vue-router': 'VueRouter',
-			'element-ui': 'ELEMENT',
-			'Axios': 'axios'
+			'element-ui': 'ElementUI',
+			'nprogress': 'NProgress',
+			'axios': 'Axios'
 		}
 	}),
 	chainWebpack: (config) => {
