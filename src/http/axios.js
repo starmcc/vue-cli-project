@@ -24,8 +24,11 @@ Axios.interceptors.request.use(config => {
 Axios.interceptors.response.use(
 	response => {
 		NProgress.done()
-		const value = response.data.value
-		return value
+    const data = response.data
+    if (response.data.code != 1) {
+      context.$Message.error(response.data.msg)
+    }
+		return data
 	},
 	error => {
 		NProgress.done()

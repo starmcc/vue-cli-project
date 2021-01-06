@@ -11,11 +11,9 @@ export const testRequest = (data) => request('GET', data, '/test/request')
  */
 async function request(method = 'GET', data = '', url = '', headers = {}) {
 	let params = method.toLowerCase() === 'get' ? 'params' : 'data'
-	data = method.toLowerCase() === 'get' ? data : { 'value': data }
-	if (method.toLowerCase() === 'post') {
-		data = JSON.stringify(data)
-	}
-	if (headers['Accept'] === undefined) headers['Accept'] = "application/json"
+  if (headers["Content-Type"] != "multipart/form-data") {
+    data = method.toLowerCase() === 'post' ? JSON.stringify(data) : data
+  }
 	if (headers['Content-Type'] === undefined) headers['Content-Type'] = "application/json"
 	if (headers['Cache-Control'] === undefined) headers['Cache-Control'] = "no-cache";
 	url = path + url
